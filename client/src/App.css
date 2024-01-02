@@ -1,0 +1,184 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+* ::-webkit-scrollbar{
+  width: 12px;
+}
+
+* ::-webkit-scrollbar-thumb {
+  background-color: #7D11C4; /* Set the background color of the scrollbar thumb */
+  border-radius: 6px; /* Set the border-radius for a rounded appearance */
+}
+
+* ::-webkit-scrollbar-track:hover {
+  background-color: #9696C9; /* Set the background color on hover */
+}
+
+body,
+html {
+  scroll-behavior: smooth;
+}
+
+body{
+  background-image: url('./assets/img/bg_img.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100vh;
+}
+
+.Header {
+  width: 100%;
+  height: 100px;
+  background: rgba(255, 255, 255, 0.270); /* Use an RGBA background for transparency */
+  backdrop-filter: blur(10px);
+ position: fixed;
+ top: 0;
+ left: 0;
+ display: flex;
+ align-items: center;
+ justify-content: space-between;
+ padding: 0 30px;
+ z-index: 10000;
+}
+
+.Header .input_logo{
+  background: #000;
+}
+
+.Header .input_logo .logo{
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+
+}
+
+.Header .input_profile{
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+ .b_btn{
+  background: #016afb;
+  color: #fff;
+}
+
+.w_btn{
+  background: #fff;
+  color: #016afb;
+}
+
+/**
+ * 
+ * button section
+ */
+
+ button{
+  padding: 10px 25px;
+  font-size: 16px;
+  font-weight: 700;
+  border: none;
+  border-radius: 20px;
+  width: 100px;
+  cursor: pointer;
+ }
+
+ button:hover{
+  opacity: 0.8;
+ }
+
+ /**
+  * for the form 
+  */
+
+  .form-group {
+    width: 100%;
+    height: 100vh;
+    background: rgba(255, 255, 255, 0.150); /* Use an RGBA background for transparency */
+    backdrop-filter: blur(10px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .form-group form{
+    background: #fff;
+    min-width: 400px;
+    width: 500px;
+    padding: 50px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+  }
+
+  .form-group form>div{
+    margin-bottom: 20px;
+  }
+
+  .form-group form input{
+    width: 60%;
+    padding: 3px 10px;
+    outline-color: #016afb;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+
+  form .imgFile{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 100px;
+  }
+
+  form>div>label>img{
+    width: 140px;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 50%;
+    transition: all 0.2s ease;
+  }
+
+  form .imgFile>label:hover img{
+    cursor: pointer;
+    transition: scale(0.23, 1);
+    width: 150px;
+    height: 150px;
+  }
+
+  form>div input[type="file"]{
+    display: none;
+    cursor: pointer;
+  }
+
+  form .cancelIcon{
+    position: relative;
+    top: -20px;
+    right: -370px;
+    background: #DDD;
+    border-radius: 50%;
+    color: #fff;
+    width: 40px;
+    height: 40px;display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .cancelIcon p{
+    text-decoration: none;
+    font-size: 30px;
+    color: #000;
+  }
+
+  form>p{
+    margin-bottom: 10px;
+  }

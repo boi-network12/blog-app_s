@@ -3,6 +3,10 @@ import User from '../assets/img/user_img.png'
 import {Link, useNavigate } from 'react-router-dom'
 import axios from 'axios'
 import {toast} from 'react-hot-toast'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faSpinner } from '@fortawesome/free-solid-svg-icons'
+import { faTimes } from '@fortawesome/free-solid-svg-icons';
+
 
 
 const Register = () => {
@@ -13,6 +17,7 @@ const Register = () => {
     password: '',
     imgFile: null,
   });
+  const [loading, setLoading] = useState(false);
 
   const handleImageChange = (e) => {
     const file = e.target.files[0];
@@ -51,16 +56,24 @@ const Register = () => {
 
   }
 
+  const handleClick = () => {
+    // simulating an asynchronous task
+    setLoading(true);
+    setTimeout(()=>{
+      setLoading(false);
+    },2000)
+  }
+
   
 
   return (
     <div className='form-group'>
       <form action="" onSubmit={registerUser}>
-        <div className="cancelIcon">
-          <Link to="/">
-            <p> &times; </p>
-          </Link>
-        </div>
+      <div className="cancelIcon">
+        <Link to="/">
+          <FontAwesomeIcon icon={faTimes} />
+        </Link>
+      </div>
         <div className='imgFile'>
            <label htmlFor='imgFile'>
              {data.imgFile ? (
@@ -88,9 +101,14 @@ const Register = () => {
           <button type='submit' className='b_btn' style={{
             alignSelf: "center"
           }}
-          
+          onClick={handleClick}
+          disabled={loading}
           >
-            Submit
+           {loading ? (
+            <FontAwesomeIcon icon={faSpinner} spin />
+           ) : (
+            ' Submit'
+           )}
           </button>
       </form>
     </div>

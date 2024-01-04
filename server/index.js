@@ -6,7 +6,7 @@ const multer = require('multer');
 const app = express();
 const fs = require('fs')
 const User = require('./models/user')
-
+const cookieParser = require('cookie-parser')
 
 // database connection
 mongoose.connect(process.env.MONGO_URL)
@@ -16,6 +16,10 @@ mongoose.connect(process.env.MONGO_URL)
 // middleware 
 
 app.use(express.json())
+
+app.use(cookieParser())
+
+app.use(express.urlencoded({extended: false}))
 
 
 app.use('/', require('./routes/authRoutes'))
